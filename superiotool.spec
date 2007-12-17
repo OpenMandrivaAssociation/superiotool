@@ -11,7 +11,6 @@ Source0: %{name}-%{svnversion}.tar.gz
 License: GPL
 Group: System/Kernel and hardware
 Url: http://linuxbios.org/index.php/Superiotool
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Superiotool is a GPL'd user-space helper tool for LinuxBIOS development 
