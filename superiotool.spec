@@ -1,7 +1,7 @@
 %define name superiotool
 %define svnversion 20071017
 %define version 0.%{svnversion} 
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary: Detect which Super I/O you have on your mainboard
 Name: %{name}
