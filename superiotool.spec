@@ -1,17 +1,17 @@
 %define name superiotool
-%define svnversion 20071017
+%define svnversion 20111206
 %define version 0.%{svnversion} 
-%define release %mkrel 5
 
-Summary: Detect which Super I/O you have on your mainboard
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{name}-%{svnversion}.tar.gz
-License: GPL
-Group: System/Kernel and hardware
-Url: http://linuxbios.org/index.php/Superiotool
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Summary:	Detect which Super I/O you have on your mainboard
+Name:		%{name}
+Version:	%{version}
+Release:	1
+Source0:	%{name}-%{svnversion}.tar.bz2
+License:	GPL
+Group:		System/Kernel and hardware
+Url:		http://www.coreboot.org/Superiotool
+BuildRequires:	pciutils-devel
+Patch0:		makefiles_normal_dir.patch
 
 %description
 Superiotool is a GPL'd user-space helper tool for LinuxBIOS development 
@@ -22,20 +22,16 @@ of the Super I/O.
 
 %prep
 %setup -q -n %name
+%patch0 -p1
 
 %build
-make
+%make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}
-%makeinstall PREFIX=$RPM_BUILD_ROOT/usr
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+%makeinstall_std
 
 %files
 %defattr(-,root,root)
-%{_bindir}/superiotool
+%{_sbindir}/superiotool
 %{_mandir}/man8/superiotool*
 
