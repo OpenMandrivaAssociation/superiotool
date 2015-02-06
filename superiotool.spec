@@ -5,7 +5,7 @@
 Summary:	Detect which Super I/O you have on your mainboard
 Name:		%{name}
 Version:	%{version}
-Release:	1
+Release:	2
 Source0:	%{name}-%{svnversion}.tar.bz2
 License:	GPL
 Group:		System/Kernel and hardware
