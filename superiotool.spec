@@ -9,7 +9,7 @@ Release:	1
 Source0:	%{name}-%{svnversion}.tar.bz2
 License:	GPL
 Group:		System/Kernel and hardware
-Url:		http://www.coreboot.org/Superiotool
+Url:		https://www.coreboot.org/Superiotool
 BuildRequires:	pciutils-devel
 Patch0:		makefiles_normal_dir.patch
 
